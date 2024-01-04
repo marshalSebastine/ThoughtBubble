@@ -1,8 +1,9 @@
 const request = require("supertest");
-const app = require("../../src/app")
-const setUpDB = requure("")
+const app = require("../../src/app");
+const setUpTestDB = require("../utils/setUpTestDB");
 
-beforeEach()
+
+setUpTestDB()
 
 
 describe("Auth routes", () => {
@@ -23,8 +24,13 @@ describe("Auth routes", () => {
 
         test("invalid email provided", async () => {
 
-            const resp = (await request(app).post('/auth/login').send({email: "alertyq82734",password: 123}))
+            const resp = (await request(app).post('/auth/login').send({email: "alertyq82734",password: 23}))
             expect(resp.statusCode).toBe(422);
+        })
+
+        test("given mail id that is not registered", async() => {
+            const resp = (await request(app).post('/auth/login').send({email: "some@gmail.com",password: "somepass"}))
+            expect(resp.statusCode.toBe(401))
         })
 
         //set beforeEach closure

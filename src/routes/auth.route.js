@@ -4,7 +4,7 @@ const validator = require("email-validator");
 
 
 const router = express.Router();
-
+// considered the case of login with email
 router.post('/login',(req,res) => {
 
     let {email,password} = req.body
@@ -19,8 +19,8 @@ router.post('/login',(req,res) => {
 
     // check for entry in db 
 
-    // res.status = 200
-    // res.end()
+    res.status = 200
+    res.end()
 
 })
 
