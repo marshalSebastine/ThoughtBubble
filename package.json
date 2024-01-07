@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "npm run startlocaldb && jest --silent",
+    "test-debug": "npm run startlocaldb && jest", 
     "start": "npm run startlocaldb src/index.js",
     "dev": "NODE_ENV=development nodemon src/index.js",
     "startlocaldb": "LC_ALL='C' /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15 &"

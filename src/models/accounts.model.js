@@ -1,6 +1,6 @@
 const sequelize = require("./model.index");
 const { DataTypes } = require("sequelize");
-const isValidPassword = require("../utils/validation.utils");
+const {isValidPassword} = require("../utils/validation.utils");
 
 const Account = sequelize.define('Account', {
 
